@@ -1,0 +1,149 @@
+.photography-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 76px 24px 72px;
+  background: rgba(12, 14, 18, 0.82);
+  backdrop-filter: blur(18px) saturate(0.85);
+  -webkit-backdrop-filter: blur(18px) saturate(0.85);
+  animation: photography-overlay-in 220ms ease both;
+}
+
+.photography-modal-overlay.is-closing {
+  pointer-events: none;
+  animation: photography-overlay-out 200ms ease both;
+}
+
+.photography-modal {
+  position: relative;
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 16px;
+  outline: none;
+  background: #13161b;
+  animation: photography-modal-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.photography-modal-overlay.is-closing .photography-modal {
+  animation: photography-modal-out 200ms ease both;
+}
+
+.photography-modal-close {
+  position: sticky;
+  top: 16px;
+  z-index: 2;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  margin: -24px -24px 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  background: rgba(12, 14, 18, 0.82);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+}
+
+.photography-modal-close img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.9;
+}
+
+.photography-masonry-shell {
+  position: relative;
+  width: 100%;
+  min-height: 3960px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes photography-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes photography-overlay-out {
+  to {
+    background: rgba(12, 14, 18, 0);
+    backdrop-filter: blur(0) saturate(1);
+    -webkit-backdrop-filter: blur(0) saturate(1);
+  }
+}
+
+@keyframes photography-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes photography-modal-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(12px) scale(0.99);
+  }
+}
+
+@media (max-width: 1240px) {
+  .photography-masonry-shell {
+    min-height: 4020px;
+  }
+}
+
+@media (max-width: 860px) {
+  .photography-modal-overlay {
+    padding: 24px 16px 48px;
+  }
+
+  .photography-modal {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .photography-modal-close {
+    top: 12px;
+    margin: -8px -8px 12px auto;
+  }
+
+  .photography-masonry-shell {
+    min-height: 7900px;
+  }
+}
+
+@media (max-width: 520px) {
+  .photography-masonry-shell {
+    min-height: 15450px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photography-modal-overlay,
+  .photography-modal-overlay.is-closing,
+  .photography-modal,
+  .photography-modal-overlay.is-closing .photography-modal {
+    animation: none;
+  }
+}

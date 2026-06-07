@@ -1,0 +1,12 @@
+.text-block {
+  color: inherit;
+}
+
+.text-block p {
+  margin: 0;
+}
+
+.char {
+  display: inline-block;
+  will-change: contents;
+}

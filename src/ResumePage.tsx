@@ -221,15 +221,21 @@ export function ResumePage({ activePage, onNavigate }: ResumePageProps) {
           <h1>Mobolarinwa Fakeyede Oladeji</h1>
           <p>Senior Product Designer </p>
         </div>
-        <button className="resume-figma-download" type="button" data-cursor-text="Download">
+        <a
+          className="resume-figma-download"
+          href="https://drive.google.com/file/d/15JzHtEILxgC5i6A-wv6D7b5NVbMgVD4r/view?usp=sharing"
+          target="_blank"
+          rel="noreferrer"
+          data-cursor-text="Download"
+        >
           Download PDF
-        </button>
+        </a>
       </header>
 
       <div className="resume-figma-layout">
         <aside className="resume-figma-sidebar" data-reveal>
           <p>{summary}</p>
-          <a href="https://www.linkedin.com/in/mobolarinwa-fakeyede/" target="_blank" rel="noreferrer" data-cursor-text="Visit">
+          <a href="https://www.linkedin.com/in/bfakeyede" target="_blank" rel="noreferrer" data-cursor-text="Visit">
             <img src={resumeAssets.linkedin} alt="" />
             Linkedin
           </a>

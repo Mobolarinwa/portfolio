@@ -1,8 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { inject } from "@vercel/analytics";
 import "./styles.css";
 import { App } from "./App";
+
+inject();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

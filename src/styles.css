@@ -5404,6 +5404,25 @@ button {
   .hl-iteration-block {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  /* Persona cards wrap much taller than the viewport on narrow screens, so the
+     scroll-stack pin pushes the last card's translateY down into the next
+     section (overlap). Fall back to a plain vertical list — same approach as
+     the reduced-motion fallback. The CSS `!important` overrides the inline
+     transforms ScrollStack writes per frame. */
+  .hl-persona-stack {
+    padding-bottom: 0;
+  }
+
+  .hl-persona-stack .hl-persona-card {
+    min-height: 0;
+  }
+
+  .hl-persona-stack .scroll-stack-card {
+    transform: none !important;
+    filter: none !important;
+    margin-bottom: 24px !important;
+  }
 }
 
 @media (max-width: 520px) {

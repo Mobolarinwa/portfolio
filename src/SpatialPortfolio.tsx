@@ -93,7 +93,7 @@ const spotifyEmbeds: SpotifyEmbed[] = [
   {
     id: "spotify-episode",
     title: "Spotify episode player",
-    src: "https://open.spotify.com/embed/episode/4zzCWI01WgcBRGK6PAVhBU?utm_source=generator&theme=0",
+    src: "https://open.spotify.com/embed/episode/3JbyADzJHShBXyNFmjqgzQ?utm_source=generator&theme=0",
     x: 4052,
     y: 1107,
     width: 483,
